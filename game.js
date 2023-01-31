@@ -10,21 +10,30 @@ function changeDisplay(newDisplay){
      textDisplay.textContent = newDisplay;
 }
 
-changeDisplay("Welcome to Duolingo simulator! Survive for 15 days and you win! But there's a catch... NO STREAK SAVORS, and this is happening at the BUSIEST TIME in your life! Good luck! (Press any option to continue)");
+changeDisplay("Welcome to Duolingo simulator! Survive for 15 days and you win! But there's a catch... NO STREAK SAVORS, and this is happening at the BUSIEST TIME in your life! Good luck! (Press next day to continue)");
+optionClicked = true;
 
 function adv(){
-     
-     if(level === 0){
-          changeDisplay("You've decided to start Duolingo. But you wonder, 'Do I have enough time for this?' What do you think? Do you want to do Duolingo? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
+     if(optionClicked == true){
+          if(level === 0){
+               changeDisplay("You've decided to start Duolingo. But you wonder, 'Do I have enough time for this?' What do you think? Do you want to do Duolingo? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
+          }
+          if(level === 1){
+               changeDisplay("More Duolingo? But you wonder, 'Do I have enough time for this?' What do you think? Do you want to do Duolingo? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
+          }
+          if(level === 2){
+               changeDisplay("You wake, and get a phone call from your friend. He wants you to attend his birthday party. Do you want to do Duolingo today? (A: Do a lesson. B: Go hang out with friends. C: Sue Duo.)");
+          }
+          if(level === 3){
+               changeDisplay("Too much Duolingo, I think. You are now suffering from depression. Do you want to do Duolingo today? (A: Do a quick lesson. B: Go hang out with no one. C: Sue Duo.)");
+          }
+          if(level === 4){
+               changeDisplay("Weekends! Go shopping or more Duolingo? (A: Do a quick lesson. B: Go shopping. C: Confront Duo.)");
+          }
+          level++;
+          daycount.textContent = level;
+          optionClicked = false;
      }
-     if(level === 1){
-          changeDisplay("More Duolingo? But you wonder, 'Do I have enough time for this?' What do you think? Do you want to do Duolingo? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
-     }
-     if(level === 2){
-          changeDisplay("You wake, and get a phone call from your friend. He wants you to attend his birthday party. Do you want to do Duolingo today? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
-     }
-     level++;
-     daycount.textContent = level;
 }
 
 function option(optionNo){
@@ -81,7 +90,7 @@ function option(optionNo){
           }
           
      }
-      if(level === 3){
+     if(level === 3){
           // level = 2;
           // changeDisplay("You wake, and get a phone call from your friend. He wants you to attend his birthday party. Do you want to do Duolingo today? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
           if(level === 3 && optionNo === 1){
@@ -98,12 +107,38 @@ function option(optionNo){
                console.log(level,optionNo)
           }
           if(level === 3  && optionNo === 3){
-               changeDisplay("You weren't able to find Duo.");
+               changeDisplay("Duo paid $100 billion for lawyers. You lose.");
                suspectlvl++
                // level++;
                //Skips lesson
                console.log(level,optionNo)
           }
      }
+     if(level === 4){
+          // level = 2;
+          // changeDisplay("You wake, and get a phone call from your friend. He wants you to attend his birthday party. Do you want to do Duolingo today? (A: Do a lesson. B: Go hang out with friends. C: Assault Duo.)");
+          if(level === 4 && optionNo === 1){
+               changeDisplay("What does, 'Я дівчина' mean? (A: I am a girl. B: I am a boy. C: Only nerds do Ukrainian.)(But hey, guess what? Duo doesn't care if you get it right or not. He just cares if you did your lesson!)")
+               // level++;
+               //Does lesson
+               console.log(level,optionNo)
+          }
+          if(level === 4 && optionNo === 2){
+               changeDisplay("You had a fun day shopping, but your family was kidnapped! You are now suffering from depression.")
+               suspectlvl++
+               // level++;
+               //Skips lesson
+               console.log(level,optionNo)
+          }
+          if(level === 4  && optionNo === 3){
+               changeDisplay("Duo finds you. FIGHT!!!");
+               level = 100;
+               //enables battle mode
+               // level++;
+               //Skips lesson
+               console.log(level,optionNo)
+          }
+     }
      setTimeout('option()', 1000)
+     optionClicked = true;
 }
