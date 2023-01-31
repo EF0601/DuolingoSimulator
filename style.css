@@ -1,0 +1,32 @@
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+html{
+     background-color: black;
+     font-family: sans-serif;
+     color: white;
+}
+nav{
+     display: flex;
+     justify-content: space-evenly;
+     padding: 20px;
+}
+footer{
+     text-align: center;
+     background-color: black;
+     border-top: 5px solid white;
+     padding: 20px;
+}
+.display{
+     height: 1000px;
+     text-align: center;
+     border-top: 5px solid white;
+     padding: 120px;
+}
+button{
+     border: 2px solid white;
+     padding: 10px;
+     margin: 10px;
+}
