@@ -34,12 +34,21 @@ function adv(){
                changeDisplay("Weekends! Go shopping or more Duolingo? (A: Do a quick lesson. B: Go shopping. C: Confront Duo.)");
           }
           if(level === 4){
-               changeDisplay("You woke up kinda sick... (A: Do a quick lesson. B: Go hang out with no one. C: Sue Duo.)")
+               changeDisplay("You woke up kinda sick... (A: Do a quick lesson. B: Go hang out with no one. C: Assault Duo.)")
+          }
+          if(level === 5){
+               changeDisplay("Uhph... Almost a week? Break? (A: Do a lesson. B: Go hang out with friends. C: Sue Duo.)")
+          }
+          if(level === 6){
+               changeDisplay("Zzzz... hmm? What?! (A: Do a quick lesson. B: Go play games. C: Assault Duo.)")
+          }
+          if(level === 7){
+               changeDisplay("... (A: Do a quick lesson. B: Go play games. C: Assault Duo.)")
           }
           level++;
           daycount.textContent = level;
           optionClicked = false;
-          if(suspectlvl >= 2){
+          if(suspectlvl >= 3){
                changeDisplay("UH OH. DUO IS ON YOU!!! FIGHT!!!")
           }
           else{}
@@ -148,6 +157,39 @@ function option(optionNo){
           }
           if(level === 5  && optionNo === 3){
                changeDisplay("/kill Duo IT WORKED! Duo's hurt! He forgot to keep count of your streak today!");
+               console.log(level,optionNo)
+          }
+     }
+     if(level === 6){
+          if(level === 6 && optionNo === 1){
+               changeDisplay("What does 'What does' mean in English? (A: What does B: What Does C: huh?)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               console.log(level,optionNo)
+               decSus();
+          }
+          if(level === 6 && optionNo === 2){
+               changeDisplay("Your friends are there, but they're addicted to Duolingo.")
+               suspectlvl++
+               console.log(level,optionNo)
+          }
+          if(level === 6  && optionNo === 3){
+               changeDisplay("Duolingo paid [infinity symbol] dollars to bribe the judge! The lawsuit failed!");
+               suspectlvl++
+               console.log(level,optionNo)
+          }
+     }
+     if(level === 7){
+          if(level === 7 && optionNo === 1){
+               changeDisplay("What does 3.141592 mean in math? (A: Decimal B: PI C: I failed math.)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               console.log(level,optionNo)
+               decSus();
+          }
+          if(level === 7 && optionNo === 2){
+               changeDisplay("Logging on to games... please wait. ERROR: CONNECTION BLOCKED")
+               suspectlvl++
+               console.log(level,optionNo)
+          }
+          if(level === 7  && optionNo === 3){
+               changeDisplay("Duo finds you! FIGHT!");
                console.log(level,optionNo)
           }
      }
