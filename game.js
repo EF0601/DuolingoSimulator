@@ -52,6 +52,9 @@ function adv(){
                changeDisplay("UH OH. DUO IS ON YOU!!! FIGHT!!!")
           }
           else{}
+          document.querySelector('.btn1').style.display = "inline";
+          document.querySelector('.btn2').style.display = "inline";
+          document.querySelector('.btn3').style.display = "inline";
      }
      else{}
 }
@@ -194,4 +197,7 @@ function option(optionNo){
           }
      }
      optionClicked = true;
+     document.querySelector('.btn1').style.display = "none";
+     document.querySelector('.btn2').style.display = "none";
+     document.querySelector('.btn3').style.display = "none";
 }
