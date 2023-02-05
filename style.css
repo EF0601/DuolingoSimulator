@@ -2,6 +2,7 @@
      padding: 0;
      margin: 0;
      box-sizing: border-box;
+     user-select: none;
 }
 html{
      background-color: black;
@@ -29,4 +30,8 @@ button{
      border: 2px solid white;
      padding: 10px;
      margin: 10px;
+}
+.container{
+     display: flex;
+     justify-content: space-evenly;
 }
