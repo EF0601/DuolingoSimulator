@@ -62,7 +62,7 @@ function adv(){
                changeDisplay("DUOLINGO?! I WANNA SPY ON DUO!!! (A: Do a long lesson. B: Go sing in da shower. C: Spy on Duo.)")
           }
           if(level === 10){
-               changeDisplay("DUOLINGO?! I WANNA FIRE ON DUO!!! (A: Do a long lesson. B: Go sing in da shower. C: Fire on Duo.)")
+               changeDisplay("DUOLINGO?! I WANNA SPY ON DUO AGAIN!!! (A: Do the longest lesson. B: Go call someone in da shower. C: Spy on Duo.)")
           }
           optionClicked = false;
 
@@ -264,6 +264,7 @@ function option(optionNo){
           if(optionNo === 3){
                changeDisplay("Duo is hiding in the trees with axes, but you don't see him.");
                console.log(level,optionNo)
+               suspectlvl++
                decDep()
           }
      }
@@ -283,6 +284,7 @@ function option(optionNo){
           if(optionNo === 3){
                changeDisplay("Duolingo bought the Earth.");
                console.log(level,optionNo)
+               suspectlvl++
                decDep()
           }
      }
@@ -302,6 +304,27 @@ function option(optionNo){
           if(optionNo === 3){
                changeDisplay("Duolingo was yelling at someone, come back later??");
                console.log(level,optionNo)
+               suspectlvl++
+               decDep()
+          }
+     }
+     if(level === 11){
+          if(optionNo === 1){
+               changeDisplay("What does 'fortnight' mean in life? (A: what's that? B: null: Don't discuss it or Duo will hear! C: ...)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               console.log(level,optionNo)
+               deplvl++
+               decSus();
+          }
+          if(optionNo === 2){
+               changeDisplay("I warned you... [phone clicks off]")
+               suspectlvl++
+               console.log(level,optionNo)
+               decDep()
+          }
+          if(optionNo === 3){
+               changeDisplay("Duolingo is sleeping at home, come back later??");
+               console.log(level,optionNo)
+               suspectlvl++
                decDep()
           }
      }
