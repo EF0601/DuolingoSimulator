@@ -71,13 +71,18 @@ function adv(){
                level = 100;
           }
           if(deplvl >= 5){
-               changeDisplay("You got depressed...")
+               changeDisplay("You got depressed... You died. Press 'Surrender' to restart.")
+               document.querySelector('.btn1').style.display = "none";
+               document.querySelector('.btn2').style.display = "none";
+               document.querySelector('.btn3').style.display = "none";
                level = 500;
           }
           else{}
-          document.querySelector('.btn1').style.display = "inline";
-          document.querySelector('.btn2').style.display = "inline";
-          document.querySelector('.btn3').style.display = "inline";
+          if(level != 500){
+               document.querySelector('.btn1').style.display = "inline";
+               document.querySelector('.btn2').style.display = "inline";
+               document.querySelector('.btn3').style.display = "inline";
+          }
           level++
      }
      else{}
