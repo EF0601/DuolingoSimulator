@@ -64,6 +64,11 @@ function adv(){
           if(level === 10){
                changeDisplay("DUOLINGO?! I WANNA SPY ON DUO AGAIN!!! (A: Do the longest lesson. B: Go call someone in da shower. C: Spy on Duo.)")
           }
+          if(level === 11){
+               changeDisplay("DUOLINGO?! HE NEEDS TO GO! (A: Do the LONGEST EVER lesson. B: Go play games. C: Attempt to kill Duo.)")
+          }
+          if(level === 12){
+               changeDisplay("... (A: Do the LONGEST EVER lesson. B: Go play games. C: Attempt to kill Duo.)")
           optionClicked = false;
 
           if(suspectlvl >= 3){
@@ -78,10 +83,16 @@ function adv(){
                level = 500;
           }
           else{}
-          if(level != 500){
+          if(level != 500 && level != 100){
                document.querySelector('.btn1').style.display = "inline";
                document.querySelector('.btn2').style.display = "inline";
                document.querySelector('.btn3').style.display = "inline";
+               if(level == 15){
+                    changeDisplay("You won!!!");
+                    document.querySelector('.btn1').style.display = "none";
+               document.querySelector('.btn2').style.display = "none";
+               document.querySelector('.btn3').style.display = "none";
+               }
           }
           level++
      }
@@ -315,7 +326,7 @@ function option(optionNo){
      }
      if(level === 11){
           if(optionNo === 1){
-               changeDisplay("What does 'fortnight' mean in life? (A: what's that? B: null: Don't discuss it or Duo will hear! C: ...)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               changeDisplay("What does 'fortnight' mean in life? (A: what's that? B: null: Don't discuss it or Duo will hear! C: 2 weeks)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
                console.log(level,optionNo)
                deplvl++
                decSus();
@@ -333,9 +344,50 @@ function option(optionNo){
                decDep()
           }
      }
+     if(level === 12){
+          if(optionNo === 1){
+               changeDisplay("What does 'Como te llamas?' mean in spanish? (A: what's that? B: What's your name? C: Only nerds do Spanish.)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               console.log(level,optionNo)
+               deplvl++
+               decSus();
+          }
+          if(optionNo === 2){
+               changeDisplay("Windows OS encountered a problem: null: malware.duolingo.launch has interupted the launch of games.io")
+               suspectlvl++
+               console.log(level,optionNo)
+               decDep()
+          }
+          if(optionNo === 3){
+               changeDisplay("An explosion rocks the room. Duo was hit! He couldn't count your streak today!");
+               console.log(level,optionNo)
+               decDep()
+               decSus()
+          }
+     }
+     if(level === 13){
+          if(optionNo === 1){
+               changeDisplay("What does 'fortnight' mean in Chinese? (A: Hello B: Bye bye! C: Only nerds do Chinese)(But guess what? Duo doesn't care if you got it wrong or not! He just cares that you did it!) (Press next day to continue)")
+               console.log(level,optionNo)
+               deplvl++
+               decSus();
+          }
+          if(optionNo === 2){
+               changeDisplay("You tried... BUT DUOLINGO FOUND YOU!!!")
+               suspectlvl = 3;
+               console.log(level,optionNo)
+               decDep()
+          }
+          if(optionNo === 3){
+               changeDisplay("Fire! OH NO!!! DUOLINGO IS INVINCIBLE?!");
+               console.log(level,optionNo)
+               suspectlvl++
+               decDep()
+          }
+     }
      optionClicked = true;
      document.querySelector('.btn1').style.display = "none";
      document.querySelector('.btn2').style.display = "none";
      document.querySelector('.btn3').style.display = "none";
      
+}
 }
